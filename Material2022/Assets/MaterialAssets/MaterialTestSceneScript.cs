@@ -36,9 +36,9 @@ public class MaterialTestSceneScript : MonoBehaviour
         var minikinScreenshot = TakeMinikinScreenshot();
         RenderTexture textureOutput = new(minikinScreenshot.height, minikinScreenshot.width, 16);
 
-        MinipicLayerBlenderMaterial.SetTexture("_BG", BottomLayerTexture);
-        MinipicLayerBlenderMaterial.SetTexture("_RenderedMinikin", minikinScreenshot);
-        MinipicLayerBlenderMaterial.SetTexture("_FG", TopLayerTexture);
+        MinipicLayerBlenderMaterial.SetTexture("_BgTex", BottomLayerTexture);
+        MinipicLayerBlenderMaterial.SetTexture("_MainTex", minikinScreenshot);
+        MinipicLayerBlenderMaterial.SetTexture("_FgTex", TopLayerTexture);
 
         Graphics.Blit(null, textureOutput, MinipicLayerBlenderMaterial);
 
